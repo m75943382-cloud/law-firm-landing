@@ -1,5 +1,6 @@
 const translations = {
     ar: {
+        page_title: "مكتب العدالة للمحاماة والاستشارات القانونية",
         logo_text: "العدالة",
         nav_home: "الرئيسية",
         nav_about: "من نحن",
@@ -7,6 +8,7 @@ const translations = {
         nav_contact: "تواصل معنا",
         hero_title: "شريكك القانوني الموثوق في مصر",
         hero_subtitle: "نقدم حلولاً قانونية مبتكرة وشاملة لحماية حقوقك ومصالحك بأعلى معايير الاحترافية.",
+        btn_whatsapp_contact: "احصل على استشارة مجانية",
         btn_consultation: "طلب استشارة مجانية",
         btn_services: "استكشف خدماتنا",
         about_title: "من نحن",
@@ -45,6 +47,7 @@ const translations = {
         copyright: "© 2023 مكتب العدالة للمحاماة. جميع الحقوق محفوظة."
     },
     en: {
+        page_title: "Al-Adala Law Firm & Legal Consultations",
         logo_text: "Al-Adala",
         nav_home: "Home",
         nav_about: "About Us",
@@ -52,6 +55,7 @@ const translations = {
         nav_contact: "Contact",
         hero_title: "Your Trusted Legal Partner in Egypt",
         hero_subtitle: "We provide innovative and comprehensive legal solutions to protect your rights and interests with the highest standards of professionalism.",
+        btn_whatsapp_contact: "Get a Free Consultation",
         btn_consultation: "Free Consultation",
         btn_services: "Explore Services",
         about_title: "About Us",
@@ -96,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const contactForm = document.getElementById('contactForm');
-    
+
     // Language Toggle Logic
     let currentLang = 'ar';
 
@@ -109,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update HTML attributes
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        
+
         // Update Button Text
         langToggleBtn.textContent = lang === 'ar' ? 'English' : 'العربية';
 
@@ -150,10 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value;
-        const message = currentLang === 'ar' 
+        const message = currentLang === 'ar'
             ? `شكراً لك ${name}، تم استلام رسالتك بنجاح وسنتواصل معك قريباً.`
             : `Thank you ${name}, your message has been received successfully and we will contact you soon.`;
-        
+
         alert(message);
         contactForm.reset();
     });
